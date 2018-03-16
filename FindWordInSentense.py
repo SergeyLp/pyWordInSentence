@@ -9,9 +9,11 @@ from pathlib import Path
 #nltk.download('punkt')
 
 
-text_file_name = r"Alice.txt"
-sentence_list_file = Path(text_file_name.replace('.txt', '.pickle').replace('.TXT', '.pickle'))
+text_file_name = Path(r"../Texts/Alice.txt")
+f2 = text_file_name.name
 
+#sentence_list_file = Path(text_file_name.replace('.txt', '.pickle').replace('.TXT', '.pickle'))
+sentence_list_file = Path('.pickles/' + text_file_name.name + '.pickle')
 extra_abbreviations = {'dr', 'vs', 'mr', 'mrs', 'prof', 'inc', 'i.e'}
 sentence_tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 sentence_tokenizer._params.abbrev_types.update(extra_abbreviations)
